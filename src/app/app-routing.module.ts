@@ -5,14 +5,17 @@ import { SigninComponent } from './signin/signin.component';
 import { HomeComponent } from './home/home.component';
 import { MainComponent } from './main/main.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AdditemComponent } from './additem/additem.component';
 
 const routes: Routes = [
-  {path:'',redirectTo:'main',pathMatch:'full'},
+  {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'login',component:LoginComponent},
   {path:'signin',component:SigninComponent},
   {path:'home',component:HomeComponent},
   {path:"main",component:MainComponent},
-  {path:'dash',component:DashboardComponent}
+  {path:'dash',component:DashboardComponent,
+  children:[{path:'add',component:AdditemComponent}
+   ]},
 ];
 
 @NgModule({
